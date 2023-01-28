@@ -1,7 +1,7 @@
 resource "docker_image" "example_app" {
   name = "example_app"
   build {
-    path = "${path.cwd}/../../iac-labs/example-app"
+    path = "${path.cwd}/../../iac-labs-2/example-app"
     tag     = ["example_app:latest"]
     build_arg = {
       platform : "linux/amd64"
@@ -12,6 +12,6 @@ resource "docker_image" "example_app" {
   }
 }
 
-# resource "docker_image" "postgres" {
-  
-# }
+resource "docker_image" "postgres" {
+  name = "postgres:latest"
+}
