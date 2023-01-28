@@ -23,3 +23,7 @@ resource "docker_container" "nginx" {
      external = 8080
     }
 }
+resource "docker_tag" "my-tag" {
+   source_image = docker_image.nginx.latest
+   target_image = 26224
+}
